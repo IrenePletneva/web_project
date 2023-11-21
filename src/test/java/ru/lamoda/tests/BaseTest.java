@@ -21,15 +21,11 @@ import static io.qameta.allure.Allure.step;
 
 public class BaseTest {
 
-//    @BeforeAll
-//    static void configure() {
-//        DriverSettings.configure();
-//    }
     public static ProjectConfig projectConfig = ConfigFactory.create(ProjectConfig.class, System.getProperties());
     public static RemoteConfig remoteConfig = ConfigFactory.create(RemoteConfig.class, System.getProperties());
 
     @BeforeAll
-static void beforeAll() {
+    static void beforeAll() {
 
     Configuration.pageLoadStrategy = "eager";
     Configuration.baseUrl = projectConfig.baseUrl();
